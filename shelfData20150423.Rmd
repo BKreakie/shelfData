@@ -1,0 +1,24 @@
+
+#Shelf Data Project Metadata
+##Last updated: April 23, 2015
+
+************
+  #Data Definitions:
+  
+    browseURL('https://github.com/jhollist/hkm2014/blob/master/data/hkm2014Data.md')
+************
+The data can be loaded into R with the following code:
+************
+  #Get the Data
+  
+    load(url('https://raw.github.com/jhollist/hkm2014/master/data/hkm2014Data.rda'))
+
+
+************
+**lakeNLCD**: NLCD (2006) landcover area and percents by category and NLCD percent impervious cover for 4 buffer zones around NLA lakes
+
+'data.frame':  4624 obs. of  59 variables:  NOTE: some missing lakes
+
+**Field**  | **Definition**
+------------- | ------------- 
+NLA_ID | USEPA National Lake Assessment 2007 unique identifier
