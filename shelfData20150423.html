@@ -70,11 +70,19 @@ img {
 <pre><code>browseURL('https://github.com/BKreakie/shelfData/blob/master/shelfData20150423.Rmd')</code></pre>
 <hr />
 <p>The data can be loaded into R with the following code: ************ #Get the Data</p>
-<pre><code>load(url('https://raw.github.com/jhollist/hkm2014/master/data/hkm2014Data.rda'))</code></pre>
+<pre><code>library(RCurl)
+x&lt;-getURL(&quot;https://github.com/BKreakie/shelfData/blob/master/modern_04212015.csv&quot;)
+modernData&lt;-read.csv(text=x)
+
+x&lt;-getURL(&quot;https://github.com/BKreakie/shelfData/blob/master/historic_04212015.csv&quot;)
+historicData&lt;-read.csv(text=x)</code></pre>
 <hr />
 <p><strong>Shelf Data</strong>: This work is based on two main data sets that were collected by two different sampling effort. The historic data was collected between 2000 and 2005 and had few variables measures. The modern data was</p>
 <p>‘historic_04212015.csv’: 235 obs. of 16 variables: NOTE: some missing values</p>
 <p>‘modern_04212015.csv’: 209 obs. of 31 variables: NOTE: some missing values</p>
+<hr />
+<div id="modern-data" class="section level3">
+<h3>Modern Data</h3>
 <table>
 <thead>
 <tr class="header">
@@ -135,8 +143,166 @@ img {
 <td align="left">discreteCh</td>
 <td align="left">Chlorophyll (discrete)</td>
 </tr>
+<tr class="even">
+<td align="left">NO3</td>
+<td align="left">Nitrate</td>
+</tr>
+<tr class="odd">
+<td align="left">NO2</td>
+<td align="left">Nitrite</td>
+</tr>
+<tr class="even">
+<td align="left">sumN</td>
+<td align="left">Total of summed nitrate and nitrite</td>
+</tr>
+<tr class="odd">
+<td align="left">PO4</td>
+<td align="left">Phosphate</td>
+</tr>
+<tr class="even">
+<td align="left">NH4</td>
+<td align="left">Ammonium (dropped from anaylsis due to contamination)</td>
+</tr>
+<tr class="odd">
+<td align="left">distMeters</td>
+<td align="left">Distance (in meters) from sample point to any land</td>
+</tr>
+<tr class="even">
+<td align="left">PN</td>
+<td align="left">Particulate Nitrogen</td>
+</tr>
+<tr class="odd">
+<td align="left">Season</td>
+<td align="left">season of the year based on month sampled</td>
+</tr>
+<tr class="even">
+<td align="left">temp</td>
+<td align="left">Surface tempture</td>
+</tr>
+<tr class="odd">
+<td align="left">sal</td>
+<td align="left">Salinity</td>
+</tr>
+<tr class="even">
+<td align="left">nearLand</td>
+<td align="left">Distance (in meters) from sample point to coast line</td>
+</tr>
+<tr class="odd">
+<td align="left">densityLar</td>
+<td align="left">Density of population centers based on large radius</td>
+</tr>
+<tr class="even">
+<td align="left">densitySma</td>
+<td align="left">Density of populatation centers based on small radius</td>
+</tr>
+<tr class="odd">
+<td align="left">Ches</td>
+<td align="left">Euclidead distance to Chesapeake Bay (centroid)</td>
+</tr>
+<tr class="even">
+<td align="left">Del</td>
+<td align="left">Euclidead distance to Delaware bay</td>
+</tr>
+<tr class="odd">
+<td align="left">Hud</td>
+<td align="left">Euclidead distance to Hudson Bay</td>
+</tr>
+<tr class="even">
+<td align="left">LI</td>
+<td align="left">Euclidead distance to Long Island Sound</td>
+</tr>
+<tr class="odd">
+<td align="left">Nar</td>
+<td align="left">Euclidead distance to Narragansett Bay</td>
+</tr>
+<tr class="even">
+<td align="left">Bos</td>
+<td align="left">Euclidead distance to Boston Harbor</td>
+</tr>
 </tbody>
 </table>
+</div>
+<div id="historic-data" class="section level3">
+<h3>Historic Data</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Field</strong></th>
+<th align="left"><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">FID_</td>
+<td align="left">Sample identifier</td>
+</tr>
+<tr class="even">
+<td align="left">month</td>
+<td align="left">Month in which the sample was collected</td>
+</tr>
+<tr class="odd">
+<td align="left">year</td>
+<td align="left">Year in which the sample was collected</td>
+</tr>
+<tr class="even">
+<td align="left">lat</td>
+<td align="left">Latitude</td>
+</tr>
+<tr class="odd">
+<td align="left">long</td>
+<td align="left">Longitude</td>
+</tr>
+<tr class="even">
+<td align="left">d15N</td>
+<td align="left">Mean stable isotope measure for nitrogen</td>
+</tr>
+<tr class="odd">
+<td align="left">d13C</td>
+<td align="left">Mean stable isotope measure for carbon</td>
+</tr>
+<tr class="even">
+<td align="left">distMeters</td>
+<td align="left">Distance (in meters) from sample point to any land</td>
+</tr>
+<tr class="odd">
+<td align="left">nearLand</td>
+<td align="left">Distance (in meters) from sample point to coast line</td>
+</tr>
+<tr class="even">
+<td align="left">densityLar</td>
+<td align="left">Density of population centers based on large radius</td>
+</tr>
+<tr class="odd">
+<td align="left">densitySma</td>
+<td align="left">Density of populatation centers based on small radius</td>
+</tr>
+<tr class="even">
+<td align="left">Ches</td>
+<td align="left">Euclidead distance to Chesapeake Bay (centroid)</td>
+</tr>
+<tr class="odd">
+<td align="left">Del</td>
+<td align="left">Euclidead distance to Delaware bay</td>
+</tr>
+<tr class="even">
+<td align="left">Hud</td>
+<td align="left">Euclidead distance to Hudson Bay</td>
+</tr>
+<tr class="odd">
+<td align="left">LI</td>
+<td align="left">Euclidead distance to Long Island Sound</td>
+</tr>
+<tr class="even">
+<td align="left">Nar</td>
+<td align="left">Euclidead distance to Narragansett Bay</td>
+</tr>
+<tr class="odd">
+<td align="left">Bos</td>
+<td align="left">Euclidead distance to Boston Harbor</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 

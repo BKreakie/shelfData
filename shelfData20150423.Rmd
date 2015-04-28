@@ -11,8 +11,12 @@ The data can be loaded into R with the following code:
 ************
   #Get the Data
   
-    load(url('https://raw.github.com/jhollist/hkm2014/master/data/hkm2014Data.rda'))
-
+    library(RCurl)
+    x<-getURL("https://github.com/BKreakie/shelfData/blob/master/modern_04212015.csv")
+    modernData<-read.csv(text=x)
+    
+    x<-getURL("https://github.com/BKreakie/shelfData/blob/master/historic_04212015.csv")
+    historicData<-read.csv(text=x)
 
 ************
 **Shelf Data**: This work is based on two main data sets that were collected by two different sampling effort.  The historic data was collected between 2000 and 2005 and had few variables measures.  The modern data was 
@@ -21,6 +25,8 @@ The data can be loaded into R with the following code:
 
 'modern_04212015.csv':  209 obs. of  31 variables:  NOTE: some missing values
 
+************
+###Modern Data
 **Field**  | **Definition**
 ------------- | ------------- 
 FID_ | Sample identifier
@@ -36,3 +42,44 @@ d13C | Mean stable isotope measure for carbon
 iso | Filtered for iso (ml)
 Chl | Chlorophyll (flo-thru) 
 discreteCh | Chlorophyll (discrete) 
+NO3 | Nitrate
+NO2 | Nitrite
+sumN | Total of summed nitrate and nitrite
+PO4 | Phosphate
+NH4 | Ammonium (dropped from anaylsis due to contamination)
+distMeters| Distance (in meters) from sample point to any land
+PN | Particulate Nitrogen
+Season | season of the year based on month sampled
+temp | Surface tempture 
+sal | Salinity
+nearLand | Distance (in meters) from sample point to coast line 
+densityLar | Density of population centers based on large radius
+densitySma | Density of populatation centers based on small radius
+Ches | Euclidead distance to Chesapeake Bay (centroid)
+Del | Euclidead distance to Delaware bay
+Hud | Euclidead distance to Hudson Bay
+LI | Euclidead distance to Long Island Sound 
+Nar | Euclidead distance to Narragansett Bay
+Bos | Euclidead distance to Boston Harbor
+
+
+###Historic Data
+**Field**  | **Definition**
+------------- | ------------- 
+FID_ | Sample identifier
+month | Month in which the sample was collected
+year | Year in which the sample was collected
+lat | Latitude
+long | Longitude
+d15N | Mean stable isotope measure for nitrogen
+d13C | Mean stable isotope measure for carbon
+distMeters| Distance (in meters) from sample point to any land
+nearLand | Distance (in meters) from sample point to coast line
+densityLar | Density of population centers based on large radius
+densitySma | Density of populatation centers based on small radius
+Ches | Euclidead distance to Chesapeake Bay (centroid)
+Del | Euclidead distance to Delaware bay
+Hud | Euclidead distance to Hudson Bay
+LI | Euclidead distance to Long Island Sound 
+Nar | Euclidead distance to Narragansett Bay
+Bos | Euclidead distance to Boston Harbor
