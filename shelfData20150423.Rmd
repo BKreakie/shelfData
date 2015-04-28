@@ -1,3 +1,6 @@
+---
+output: pdf_document
+---
 
 #Shelf Data Project Metadata
 ##Last updated: April 23, 2015
