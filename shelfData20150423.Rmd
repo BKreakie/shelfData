@@ -5,7 +5,7 @@
 ************
   #Data Definitions:
   
-    browseURL('https://github.com/jhollist/hkm2014/blob/master/data/hkm2014Data.md')
+    browseURL('https://github.com/BKreakie/shelfData/blob/master/shelfData20150423.Rmd')
 ************
 The data can be loaded into R with the following code:
 ************
@@ -15,10 +15,24 @@ The data can be loaded into R with the following code:
 
 
 ************
-**lakeNLCD**: NLCD (2006) landcover area and percents by category and NLCD percent impervious cover for 4 buffer zones around NLA lakes
+**Shelf Data**: This work is based on two main data sets that were collected by two different sampling effort.  The historic data was collected between 2000 and 2005 and had few variables measures.  The modern data was 
 
-'data.frame':  4624 obs. of  59 variables:  NOTE: some missing lakes
+'historic_04212015.csv':  235 obs. of  16 variables:  NOTE: some missing values
+
+'modern_04212015.csv':  209 obs. of  31 variables:  NOTE: some missing values
 
 **Field**  | **Definition**
 ------------- | ------------- 
-NLA_ID | USEPA National Lake Assessment 2007 unique identifier
+FID_ | Sample identifier
+Cruise | ID for  NOAA sampling cruise 
+month | Month in which the sample was collected
+year | Year in which the sample was collected
+Station | ID for NOAA sample location
+position | Whether sample was collected at the 'Surface (Surf)' or 'Deep'
+lat | Latitude
+long | Longitude
+d15N | Mean stable isotope measure for nitrogen
+d13C | Mean stable isotope measure for carbon
+iso | Filtered for iso (ml)
+Chl | Chlorophyll (flo-thru) 
+discreteCh | Chlorophyll (discrete) 
