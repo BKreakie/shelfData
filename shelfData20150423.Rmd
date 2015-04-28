@@ -22,7 +22,7 @@ The data can be loaded into R with the following code:
     historicData<-read.csv(text=x)
 
 ************
-**Shelf Data**: This work is based on two main data sets that were collected by two different sampling effort.  The historic data was collected between 2000 and 2005 and had few variables measures.  The modern data was 
+**Shelf Data**: This work is based on two main data sets that were collected by two different sampling effort.  The historic data was collected between 2000 and 2005 and had fewer variables measures.  The modern data was collected between 2010 and 2013.
 
 'historic_04212015.csv':  235 obs. of  16 variables:  NOTE: some missing values
 
